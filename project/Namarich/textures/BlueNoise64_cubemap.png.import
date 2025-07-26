@@ -1,0 +1,25 @@
+[remap]
+
+importer="cubemap_texture"
+type="CompressedCubemap"
+uid="uid://cbuirgc2xy3mj"
+path="res://.godot/imported/BlueNoise64_cubemap.png-9eed27e615f974968fa701b73a47258e.ccube"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Namarich/textures/BlueNoise64_cubemap.png"
+dest_files=["res://.godot/imported/BlueNoise64_cubemap.png-9eed27e615f974968fa701b73a47258e.ccube"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+slices/arrangement=3

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://syx00kieaoxo"]
+
+[ext_resource type="PackedScene" uid="uid://dvy7ohjs3txx8" path="res://assets/fbx/floor_dirt_small_D.fbx" id="1_1yg0v"]
+[ext_resource type="Texture2D" uid="uid://cpf24mpwvaw6x" path="res://assets/fbx/dungeon_texture.png" id="2_0li1s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k7ypi"]
+albedo_texture = ExtResource("2_0li1s")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_medpi"]
+size = Vector3(2, 0.118, 2)
+
+[node name="floor_dirt_small_D" instance=ExtResource("1_1yg0v")]
+
+[node name="floor_dirt_small_D" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_k7ypi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04, 0)
+shape = SubResource("BoxShape3D_medpi")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwn6k2mptf7m2"]
+
+[ext_resource type="PackedScene" uid="uid://clkci2rb2grru" path="res://assets/fbx/floor_tile_big_spikes.fbx" id="1_agxry"]
+[ext_resource type="Texture2D" uid="uid://bups6jv5qfuee" path="res://assets/textures/dungeon_texture.png" id="2_1edh3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p267p"]
+albedo_texture = ExtResource("2_1edh3")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wppae"]
+size = Vector3(4, 0.118, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_edk2q"]
+size = Vector3(2, 2, 2)
+
+[node name="floor_tile_big_spikes" instance=ExtResource("1_agxry")]
+
+[node name="floor_tile_big_spikes" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_p267p")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04, 0)
+shape = SubResource("BoxShape3D_wppae")
+
+[node name="Area3D" type="Area3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_edk2q")

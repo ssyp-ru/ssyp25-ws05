@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bp8us8trdoxn8"]
+
+[ext_resource type="PackedScene" uid="uid://bifrugc46h754" path="res://assets/fbx/torch.fbx" id="1_72yln"]
+[ext_resource type="Shader" uid="uid://024yss6gxhif" path="res://Sasha2/shader/fire.gdshader" id="3_mweye"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7vksu"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.3
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7vksu"]
+frequency = 0.08
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_htd7w"]
+invert = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_7vksu")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nw2b3"]
+render_priority = 0
+shader = ExtResource("3_mweye")
+shader_parameter/noise = SubResource("NoiseTexture2D_htd7w")
+shader_parameter/color_red = Color(0.756863, 0.0823529, 0, 1)
+shader_parameter/color_yellow = Color(0.619608, 0.447059, 0, 1)
+
+[node name="torch" instance=ExtResource("1_72yln")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.615189, 0)
+light_energy = 1.1
+light_size = 0.05
+omni_range = 10.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.670051, 0)
+mesh = SubResource("CylinderMesh_7vksu")
+surface_material_override/0 = SubResource("ShaderMaterial_nw2b3")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpf2f2ufcp4ic"]
+
+[ext_resource type="PackedScene" uid="uid://cyshvmwr3kqno" path="res://assets/fbx/floor_tile_big_grate_open.fbx" id="1_uull2"]
+[ext_resource type="Texture2D" uid="uid://bups6jv5qfuee" path="res://assets/textures/dungeon_texture.png" id="2_v1evo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ss46y"]
+albedo_texture = ExtResource("2_v1evo")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5kjgt"]
+size = Vector3(4, 0.118, 4)
+
+[node name="floor_tile_big_grate_open" instance=ExtResource("1_uull2")]
+
+[node name="floor_tile_big_grate_open" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ss46y")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04, 0)
+shape = SubResource("BoxShape3D_5kjgt")

@@ -1,0 +1,56 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bfves07kkndso"
+path="res://.godot/imported/Ghost.fbx-e217e9e470e9ee839384f25fa0c99b36.scn"
+
+[deps]
+
+source_file="res://VLADIMIR/Ghost.fbx"
+dest_files=["res://.godot/imported/Ghost.fbx-e217e9e470e9ee839384f25fa0c99b36.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:Икосфера": {
+"import/skip_import": true
+},
+"PATH:Икосфера_001": {
+"import/skip_import": true
+},
+"PATH:Икосфера_002": {
+"import/skip_import": true
+},
+"PATH:Плоскость_002": {
+"import/skip_import": true
+},
+"PATH:Точечный источник": {
+"import/skip_import": true
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1

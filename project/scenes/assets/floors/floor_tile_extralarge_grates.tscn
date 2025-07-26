@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbvi62e5upn7q"]
+
+[ext_resource type="PackedScene" uid="uid://cdwnu2d6ot0an" path="res://assets/fbx/floor_tile_extralarge_grates.fbx" id="1_j5j4p"]
+[ext_resource type="Texture2D" uid="uid://bups6jv5qfuee" path="res://assets/textures/dungeon_texture.png" id="2_wvhm2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_in4el"]
+albedo_texture = ExtResource("2_wvhm2")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tnhvd"]
+size = Vector3(8, 0.118, 8)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_l8ets"]
+points = PackedVector3Array(-1, 0.15, 0.35, -1, 0.15, -0.35, -0.35, 0.15, -1, 0.35, 0.15, -1, 1, 0.15, -0.35, 1, 0.15, 0.35, 0.35, 0.15, 1, -0.35, 0.15, 1, -1, 0, 0.35, -1, 0, -0.35, -0.35, 0, -1, 0.35, 0, -1, 1, 0, -0.35, 1, 0, 0.35, 0.35, 0, 1, -0.35, 0, 1)
+
+[node name="floor_tile_extralarge_grates" instance=ExtResource("1_j5j4p")]
+
+[node name="floor_tile_extralarge_grates" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_in4el")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04, 0)
+shape = SubResource("BoxShape3D_tnhvd")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" index="0"]
+shape = SubResource("ConvexPolygonShape3D_l8ets")
